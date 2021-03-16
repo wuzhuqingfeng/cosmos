@@ -43,9 +43,9 @@ namespace detail_range
 		}
 
 	private:
-		value_t m_begin;
-		value_t m_end;
-		value_t m_step;
+		value_t m_begin;//开始  [m_begin, m_end)   
+		value_t m_end;  //结束
+		value_t m_step; //步长
 		int m_step_end;
 
 		class Iterator
@@ -58,7 +58,7 @@ namespace detail_range
 
 			value_t operator*() { return m_current_value; }
 
-			const Iterator* operator++()
+			const Iterator* operator++()//前置++
 			{
 				m_current_value += m_range.m_step;
 				m_current_step++;
@@ -75,7 +75,7 @@ namespace detail_range
 				return m_current_step != other.m_current_step;
 			}
 
-			const Iterator* operator--()
+			const Iterator* operator--()//前置--      --i;
 			{
 				m_current_value -= m_range.m_step;
 				m_current_step--;

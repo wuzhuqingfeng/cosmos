@@ -1,10 +1,12 @@
 #include <iostream>
+using namespace std;
 
 class Foo
 {
 public:
 	static int get(void)
 	{
+		std::cout << "Foo get" << endl;
 		return 0;
 	}
 };
@@ -14,6 +16,7 @@ class Bar
 public:
 	static const char* get(void)
 	{
+		std::cout << "Bar get" << endl;
 		return "0";
 	}
 };

@@ -12,6 +12,7 @@ const int func_cint(void);            //纯右值
 
 const Foo func_cfoo(void);  //纯右值
 
+//decltype 的结果和函数的返回值类型保持一致
 int main(void)
 {
 	int x = 0;
@@ -22,7 +23,7 @@ int main(void)
 
 	decltype(func_cint_r()) a2 = x;    //a2 -> const int&
 	decltype(func_cint_rr()) b2 = 0;   //b2 -> const int&&
-	decltype(func_cint()) c2 = 0;      //c2 -> int
+	decltype(func_cint()) c2 = 0;      //c2 -> int  不是 const int 因为函数返回的是一个纯右值，只有类类型可以携带cv限定符
 
 	decltype(func_cfoo()) ff = Foo();  //ff -> Foo
 

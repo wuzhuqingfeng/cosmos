@@ -1,5 +1,5 @@
 #include <iostream>
-
+//c++98 对象初始化示例
 int i_arr[3] = { 1, 2, 3 };  //普通数组
 
 struct A

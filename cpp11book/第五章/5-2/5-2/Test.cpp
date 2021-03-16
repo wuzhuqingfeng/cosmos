@@ -7,7 +7,10 @@ struct Complex
 	std::mutex mutex;
 	int i;
 
-	Complex() : i(0){}
+	Complex() : i(0)
+	{
+
+	}
 
 	void mul(int x)
 	{

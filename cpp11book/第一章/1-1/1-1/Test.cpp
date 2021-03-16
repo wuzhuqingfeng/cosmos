@@ -1,4 +1,5 @@
 #include <iostream>
+using namespace std;
 
 void func(auto a = 1);  //error:auto不能用于函数参数
 

@@ -7,6 +7,20 @@
 #include <cxxabi.h>
 #endif
 
+/*
+	右值引用 && 
+	因为右值不具名,只能通过引用的方式找到
+
+*/
+#if 1
+void test()
+{
+
+
+}
+
+#endif
+
 template <class T>
 std::string type_name()
 {
@@ -51,6 +65,9 @@ void Func(T&& t)
 
 int main(void)
 {
+	test();
+	
+
 	std::string str = "Test";
 	Func(str);
 	Func(std::move(str));
